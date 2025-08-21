@@ -20,6 +20,8 @@ import markedExtension from '$lib/utils/marked/extension';
 import markedKatexExtension from '$lib/utils/marked/katex-extension';
 import hljs from 'highlight.js';
 
+import { CONSTRUCTION_MODEL_NAMES } from '$lib/constants';
+
 //////////////////////////
 // Helper functions
 //////////////////////////
@@ -1528,3 +1530,27 @@ export const getAge = (birthDate) => {
 	}
 	return age.toString();
 };
+
+/**
+ * Get construction-themed display name for a model
+ * @param modelName - The actual model name (e.g., 'gpt-4o')
+ * @returns The construction-themed display name or the original name if no mapping exists
+ */
+export function getConstructionModelName(modelName: string): string {
+	if (!modelName) return CONSTRUCTION_MODEL_NAMES.default;
+	
+	// Try exact match first
+	if (CONSTRUCTION_MODEL_NAMES[modelName]) {
+		return CONSTRUCTION_MODEL_NAMES[modelName];
+	}
+	
+	// Try partial matches for variations
+	for (const [key, value] of Object.entries(CONSTRUCTION_MODEL_NAMES)) {
+		if (key !== 'default' && modelName.toLowerCase().includes(key.toLowerCase())) {
+			return value;
+		}
+	}
+	
+	// Return original name if no construction theme found
+	return modelName;
+}

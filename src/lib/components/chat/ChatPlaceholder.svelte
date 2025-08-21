@@ -55,11 +55,9 @@
 							<img
 								crossorigin="anonymous"
 								src={model?.info?.meta?.profile_image_url ??
-									($i18n.language === 'dg-DG'
-										? `${WEBUI_BASE_URL}/doge.png`
-										: `${WEBUI_BASE_URL}/static/favicon.png`)}
+									`/src/825.png`}
 								class=" size-[2.7rem] rounded-full border-[1px] border-gray-100 dark:border-none"
-								alt="logo"
+								alt="IUOE Local 825 Logo"
 								draggable="false"
 							/>
 						</Tooltip>
@@ -121,7 +119,10 @@
 						{/if}
 					{:else}
 						<div class=" font-medium text-gray-400 dark:text-gray-500 line-clamp-1 font-p">
-							{$i18n.t('How can I help you today?')}
+							🏗️ How can I help you build today, {$user?.name}?
+						</div>
+						<div class="mt-2 text-sm text-gray-500 dark:text-gray-600">
+							I'm here to support IUOE Local 825's leadership team with construction, electrical engineering, and collective bargaining needs.
 						</div>
 					{/if}
 				</div>

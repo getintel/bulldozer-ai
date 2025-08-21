@@ -8,7 +8,7 @@
 	import { WEBUI_BASE_URL } from '$lib/constants';
 
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
-	import { copyToClipboard, sanitizeResponseContent } from '$lib/utils';
+	import { copyToClipboard, sanitizeResponseContent, getConstructionModelName } from '$lib/utils';
 	import ArrowUpTray from '$lib/components/icons/ArrowUpTray.svelte';
 	import Check from '$lib/components/icons/Check.svelte';
 	import ModelItemMenu from './ModelItemMenu.svelte';
@@ -78,7 +78,7 @@
 				<Tooltip content={$user?.role === 'admin' ? (item?.value ?? '') : ''} placement="top-start">
 					<img
 						src={item.model?.info?.meta?.profile_image_url ??
-							`${WEBUI_BASE_URL}/static/favicon.png`}
+							`/src/825.png`}
 						alt="Model"
 						class="rounded-full size-5 flex items-center"
 					/>
@@ -86,9 +86,9 @@
 			</div>
 
 			<div class="flex items-center">
-				<Tooltip content={`${item.label} (${item.value})`} placement="top-start">
+				<Tooltip content={`${getConstructionModelName(item.label)} (${item.value})`} placement="top-start">
 					<div class="line-clamp-1">
-						{item.label}
+						{getConstructionModelName(item.label)}
 					</div>
 				</Tooltip>
 			</div>

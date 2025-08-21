@@ -1,0 +1,228 @@
+/* Construction Theme for IUOE Local 825 - Bulldozer™ */
+
+/* Union Colors - Based on construction and labor themes */
+:root {
+  --union-orange: #ff6b35;
+  --union-blue: #1e3a8a;
+  --union-yellow: #fbbf24;
+  --union-gray: #374151;
+  --union-dark: #111827;
+  --union-light: #f9fafb;
+}
+
+/* Construction-themed button styles */
+.btn-union {
+  background: linear-gradient(135deg, var(--union-orange), var(--union-blue));
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-union:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+/* Construction-themed input styles */
+.input-union {
+  border: 2px solid var(--union-gray);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.input-union:focus {
+  border-color: var(--union-orange);
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+  outline: none;
+}
+
+/* Union-themed card styles */
+.card-union {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.card-union:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Construction-themed header */
+.header-union {
+  background: linear-gradient(135deg, var(--union-blue), var(--union-orange));
+  color: white;
+  padding: 1rem 0;
+}
+
+/* Union-themed navigation */
+.nav-union {
+  background: var(--union-dark);
+  color: white;
+}
+
+.nav-union a {
+  color: var(--union-light);
+  transition: color 0.2s ease;
+}
+
+.nav-union a:hover {
+  color: var(--union-orange);
+}
+
+/* Construction-themed model badges */
+.model-badge {
+  background: linear-gradient(135deg, var(--union-orange), var(--union-yellow));
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Union-themed loading animation */
+.loading-union {
+  background: linear-gradient(90deg, var(--union-orange), var(--union-blue), var(--union-orange));
+  background-size: 200% 100%;
+  animation: loading-union 2s ease-in-out infinite;
+}
+
+@keyframes loading-union {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Construction-themed tooltips */
+.tooltip-union {
+  background: var(--union-dark);
+  color: white;
+  border: 1px solid var(--union-orange);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+/* Union-themed status indicators */
+.status-union {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-union.success {
+  background: #10b981;
+  color: white;
+}
+
+.status-union.warning {
+  background: var(--union-yellow);
+  color: var(--union-dark);
+}
+
+.status-union.error {
+  background: #ef4444;
+  color: white;
+}
+
+/* Construction-themed sidebar */
+.sidebar-union {
+  background: var(--union-dark);
+  color: white;
+  border-right: 2px solid var(--union-orange);
+}
+
+.sidebar-union .nav-item {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 0.25rem 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.sidebar-union .nav-item:hover {
+  background: var(--union-orange);
+  color: white;
+}
+
+.sidebar-union .nav-item.active {
+  background: var(--union-orange);
+  color: white;
+}
+
+/* Union-themed footer */
+.footer-union {
+  background: var(--union-dark);
+  color: var(--union-light);
+  border-top: 2px solid var(--union-orange);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* Construction-themed responsive design */
+@media (max-width: 768px) {
+  .btn-union {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .card-union {
+    margin: 0.5rem;
+  }
+}
+
+/* Dark mode support */
+.dark .card-union {
+  background: var(--union-dark);
+  border-color: var(--union-gray);
+  color: var(--union-light);
+}
+
+.dark .input-union {
+  background: var(--union-dark);
+  color: var(--union-light);
+  border-color: var(--union-gray);
+}
+
+/* Construction-themed animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}

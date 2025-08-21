@@ -1070,31 +1070,31 @@ except Exception as e:
 if default_prompt_suggestions == []:
     default_prompt_suggestions = [
         {
-            "title": ["Help me study", "vocabulary for a college entrance exam"],
-            "content": "Help me study vocabulary: write a sentence for me to fill in the blank, and I'll try to pick the correct option.",
+            "title": ["🏗️ Construction Safety", "Review our safety protocols"],
+            "content": "Help me review and improve our construction site safety protocols for IUOE Local 825 projects. What are the key areas we should focus on?",
         },
         {
-            "title": ["Give me ideas", "for what to do with my kids' art"],
-            "content": "What are 5 creative things I could do with my kids' art? I don't want to throw them away, but it's also so much clutter.",
+            "title": ["⚡ Electrical Engineering", "Project planning assistance"],
+            "content": "I need help planning an electrical engineering project. Can you help me break down the key phases and identify potential challenges?",
         },
         {
-            "title": ["Tell me a fun fact", "about the Roman Empire"],
-            "content": "Tell me a random fun fact about the Roman Empire",
+            "title": ["🤝 Collective Bargaining", "Contract negotiation support"],
+            "content": "Help me prepare for upcoming collective bargaining negotiations. What are the key points we should focus on for our members?",
         },
         {
-            "title": ["Show me a code snippet", "of a website's sticky header"],
-            "content": "Show me a code snippet of a website's sticky header in CSS and JavaScript.",
+            "title": ["📊 Project Management", "Timeline and resource planning"],
+            "content": "I'm managing a major construction project. Can you help me create a timeline and identify resource requirements?",
         },
         {
             "title": [
-                "Explain options trading",
-                "if I'm familiar with buying and selling stocks",
+                "🔧 Equipment Maintenance",
+                "Preventive maintenance schedule"
             ],
-            "content": "Explain options trading in simple terms if I'm familiar with buying and selling stocks.",
+            "content": "Help me create a preventive maintenance schedule for our heavy equipment. What should be the priority order?",
         },
         {
-            "title": ["Overcome procrastination", "give me tips"],
-            "content": "Could you start by asking me about instances when I procrastinate the most and then give me some suggestions to overcome it?",
+            "title": ["📋 Union Leadership", "Member communication strategies"],
+            "content": "What are effective communication strategies for keeping our union members informed about important updates and decisions?",
         },
     ]
 

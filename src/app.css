@@ -1,4 +1,5 @@
 @reference "./tailwind.css";
+@import "./construction-theme.css";
 
 @font-face {
 	font-family: 'Inter';

@@ -275,14 +275,14 @@
 						});
 					}
 
-					if ($isLastActiveTab) {
-						if ($settings?.notificationEnabled ?? false) {
-							new Notification(`${title} • Open WebUI`, {
-								body: content,
-								icon: `${WEBUI_BASE_URL}/static/favicon.png`
-							});
+											if ($isLastActiveTab) {
+							if ($settings?.notificationEnabled ?? false) {
+								new Notification(`${title} • Bulldozer™`, {
+									body: content,
+									icon: `/src/825.png`
+								});
+							}
 						}
-					}
 
 					toast.custom(NotificationToast, {
 						componentProps: {
@@ -424,14 +424,14 @@
 			const data = event?.data?.data ?? null;
 
 			if (type === 'message') {
-				if ($isLastActiveTab) {
-					if ($settings?.notificationEnabled ?? false) {
-						new Notification(`${data?.user?.name} (#${event?.channel?.name}) • Open WebUI`, {
-							body: data?.content,
-							icon: data?.user?.profile_image_url ?? `${WEBUI_BASE_URL}/static/favicon.png`
-						});
+									if ($isLastActiveTab) {
+						if ($settings?.notificationEnabled ?? false) {
+							new Notification(`${data?.user?.name} (#${event?.channel?.name}) • Bulldozer™`, {
+								body: data?.content,
+								icon: data?.user?.profile_image_url ?? `/src/825.png`
+							});
+						}
 					}
-				}
 
 				toast.custom(NotificationToast, {
 					componentProps: {
@@ -648,7 +648,7 @@
 
 <svelte:head>
 	<title>{$WEBUI_NAME}</title>
-	<link crossorigin="anonymous" rel="icon" href="{WEBUI_BASE_URL}/static/favicon.png" />
+			<link crossorigin="anonymous" rel="icon" href="/src/825.png" />
 </svelte:head>
 
 {#if loaded}

@@ -38,8 +38,8 @@
 							target="_blank">{$i18n.t('See readme.md for instructions')}</a
 						>
 						{$i18n.t('or')}
-						<a class=" font-semibold underline" href="https://discord.gg/5rJgQTnV4s" target="_blank"
-							>{$i18n.t('join our Discord for help.')}</a
+						<a class=" font-semibold underline" href="mailto:support@datapilotplus.com"
+							>contact support@datapilotplus.com for help</a
 						>
 					</div>
 

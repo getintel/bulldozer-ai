@@ -1,7 +1,35 @@
 import { browser, dev } from '$app/environment';
 // import { version } from '../../package.json';
 
-export const APP_NAME = 'Open WebUI';
+export const APP_NAME = 'Bulldozer™';
+
+// Construction-themed model display names for IUOE Local 825
+export const CONSTRUCTION_MODEL_NAMES = {
+	// OpenAI Models
+	'gpt-4o': '🏗️ Master Builder',
+	'gpt-4o-mini': '🔨 Site Foreman',
+	'gpt-4-turbo': '🚧 Project Manager',
+	'gpt-4': '🏢 Construction Chief',
+	'gpt-3.5-turbo': '👷 Safety Inspector',
+	
+	// Claude Models
+	'claude-3-5-sonnet': '⚡ Power Grid Specialist',
+	'claude-3-5-haiku': '🔌 Electrical Engineer',
+	'claude-3-opus': '🏭 Industrial Master',
+	'claude-3-sonnet': '🏗️ Structural Expert',
+	'claude-3-haiku': '⚙️ Systems Technician',
+	
+	// Ollama Models
+	'llama3.2': '🚛 Heavy Equipment Operator',
+	'llama3.1': '🏗️ Foundation Specialist',
+	'llama3': '🔨 General Contractor',
+	'codellama': '💻 Digital Foreman',
+	'mistral': '🌫️ Site Surveyor',
+	'gemma': '💎 Quality Control',
+	
+	// Default fallback
+	'default': '🏗️ Union Worker'
+};
 
 export const WEBUI_HOSTNAME = browser ? (dev ? `${location.hostname}:8080` : ``) : '';
 export const WEBUI_BASE_URL = browser ? (dev ? `http://${WEBUI_HOSTNAME}` : ``) : ``;

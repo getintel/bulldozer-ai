@@ -127,21 +127,9 @@
 		const logo = document.getElementById('logo');
 
 		if (logo) {
-			const isDarkMode = document.documentElement.classList.contains('dark');
-
-			if (isDarkMode) {
-				const darkImage = new Image();
-				darkImage.src = `${WEBUI_BASE_URL}/static/favicon-dark.png`;
-
-				darkImage.onload = () => {
-					logo.src = `${WEBUI_BASE_URL}/static/favicon-dark.png`;
-					logo.style.filter = ''; // Ensure no inversion is applied if favicon-dark.png exists
-				};
-
-				darkImage.onerror = () => {
-					logo.style.filter = 'invert(1)'; // Invert image if favicon-dark.png is missing
-				};
-			}
+			// Always use the Local 825 logo
+			logo.src = '/src/825.png';
+			logo.style.filter = ''; // No inversion needed
 		}
 	}
 
@@ -165,7 +153,7 @@
 
 <svelte:head>
 	<title>
-		{`${$WEBUI_NAME}`}
+		Bulldozer™ - IUOE Local 825
 	</title>
 </svelte:head>
 
@@ -210,9 +198,9 @@
 									<img
 										id="logo"
 										crossorigin="anonymous"
-										src="{WEBUI_BASE_URL}/static/favicon.png"
+										src="/src/825.png"
 										class="size-24 rounded-full"
-										alt=""
+										alt="IUOE Local 825 Logo"
 									/>
 								</div>
 							{/if}
