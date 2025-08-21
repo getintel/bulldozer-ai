@@ -24,7 +24,7 @@
 		<!-- IUOE Local 825 Logo -->
 		<div class="flex justify-center">
 			<img
-				src="/src/825.png"
+				src="/825.png"
 				alt="IUOE Local 825 Logo"
 				class="w-24 h-24 rounded-full border-4 border-white/20 shadow-lg"
 			/>

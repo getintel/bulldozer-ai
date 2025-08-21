@@ -128,7 +128,7 @@
 
 		if (logo) {
 			// Always use the Local 825 logo
-			logo.src = '/src/825.png';
+			logo.src = '/825.png';
 			logo.style.filter = ''; // No inversion needed
 		}
 	}
@@ -198,10 +198,18 @@
 									<img
 										id="logo"
 										crossorigin="anonymous"
-										src="/src/825.png"
+										src="/825.png"
 										class="size-24 rounded-full"
 										alt="IUOE Local 825 Logo"
 									/>
+								</div>
+								<div class="text-center mb-6">
+									<h1 class="text-2xl font-bold text-gray-900 dark:text-white">
+										Welcome to Bulldozer™
+									</h1>
+									<p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+										Powered by Local 825
+									</p>
 								</div>
 							{/if}
 							<form

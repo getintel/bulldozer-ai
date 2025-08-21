@@ -1340,7 +1340,7 @@ EVALUATION_ARENA_MODELS = PersistentConfig(
 
 DEFAULT_ARENA_MODEL = {
     "id": "arena-model",
-    "name": "Arena Model",
+    "name": "Bulldozer™",
     "meta": {
         "profile_image_url": "/favicon.png",
         "description": "Submit your questions to anonymous AI chatbots and vote on the best response.",

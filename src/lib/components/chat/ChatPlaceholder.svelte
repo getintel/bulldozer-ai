@@ -55,7 +55,7 @@
 							<img
 								crossorigin="anonymous"
 								src={model?.info?.meta?.profile_image_url ??
-									`/src/825.png`}
+									`/825.png`}
 								class=" size-[2.7rem] rounded-full border-[1px] border-gray-100 dark:border-none"
 								alt="IUOE Local 825 Logo"
 								draggable="false"

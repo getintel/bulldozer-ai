@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import sha256 from 'js-sha256';
+import { sha256 } from 'js-sha256';
 import { WEBUI_BASE_URL } from '$lib/constants';
 
 import dayjs from 'dayjs';
@@ -32,26 +32,26 @@ function escapeRegExp(string: string): string {
 	return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-export const replaceTokens = (content, sourceIds, char, user) => {
+export const replaceTokens = (content: any, sourceIds: any, char: any, user: any) => {
 	const tokens = [
 		{ regex: /{{char}}/gi, replacement: char },
 		{ regex: /{{user}}/gi, replacement: user },
 		{
 			regex: /{{VIDEO_FILE_ID_([a-f0-9-]+)}}/gi,
-			replacement: (_, fileId) =>
+			replacement: (_: any, fileId: any) =>
 				`<video src="${WEBUI_BASE_URL}/api/v1/files/${fileId}/content" controls></video>`
 		},
 		{
 			regex: /{{HTML_FILE_ID_([a-f0-9-]+)}}/gi,
-			replacement: (_, fileId) => `<file type="html" id="${fileId}" />`
+			replacement: (_: any, fileId: any) => `<file type="html" id="${fileId}" />`
 		}
 	];
 
 	// Replace tokens outside code blocks only
-	const processOutsideCodeBlocks = (text, replacementFn) => {
+	const processOutsideCodeBlocks = (text: any, replacementFn: any) => {
 		return text
 			.split(/(```[\s\S]*?```|`[\s\S]*?`)/)
-			.map((segment) => {
+			.map((segment: any) => {
 				return segment.startsWith('```') || segment.startsWith('`')
 					? segment
 					: replacementFn(segment);
@@ -60,7 +60,7 @@ export const replaceTokens = (content, sourceIds, char, user) => {
 	};
 
 	// Apply replacements
-	content = processOutsideCodeBlocks(content, (segment) => {
+	content = processOutsideCodeBlocks(content, (segment: any) => {
 		tokens.forEach(({ regex, replacement }) => {
 			if (replacement !== undefined && replacement !== null) {
 				segment = segment.replace(regex, replacement);
@@ -68,7 +68,7 @@ export const replaceTokens = (content, sourceIds, char, user) => {
 		});
 
 		if (Array.isArray(sourceIds)) {
-			sourceIds.forEach((sourceId, idx) => {
+			sourceIds.forEach((sourceId: any, idx: any) => {
 				const regex = new RegExp(`\\[${idx + 1}\\]`, 'g');
 				segment = segment.replace(regex, `<source_id data="${idx + 1}" title="${sourceId}" />`);
 			});
@@ -171,33 +171,33 @@ export function unescapeHtml(html: string) {
 	return doc.documentElement.textContent;
 }
 
-export const capitalizeFirstLetter = (string) => {
+export const capitalizeFirstLetter = (string: any) => {
 	return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-export const splitStream = (splitOn) => {
+export const splitStream = (splitOn: any) => {
 	let buffer = '';
 	return new TransformStream({
-		transform(chunk, controller) {
+		transform(chunk: any, controller: any) {
 			buffer += chunk;
 			const parts = buffer.split(splitOn);
-			parts.slice(0, -1).forEach((part) => controller.enqueue(part));
+			parts.slice(0, -1).forEach((part: any) => controller.enqueue(part));
 			buffer = parts[parts.length - 1];
 		},
-		flush(controller) {
+		flush(controller: any) {
 			if (buffer) controller.enqueue(buffer);
 		}
 	});
 };
 
-export const convertMessagesToHistory = (messages) => {
-	const history = {
+export const convertMessagesToHistory = (messages: any) => {
+	const history: any = {
 		messages: {},
 		currentId: null
 	};
 
-	let parentMessageId = null;
-	let messageId = null;
+	let parentMessageId: any = null;
+	let messageId: any = null;
 
 	for (const message of messages) {
 		messageId = uuidv4();
@@ -673,12 +673,12 @@ export const getUserPosition = async (raw = false) => {
 	}
 };
 
-const convertOpenAIMessages = (convo) => {
+const convertOpenAIMessages = (convo: any) => {
 	// Parse OpenAI chat messages and create chat dictionary for creating new chats
 	const mapping = convo['mapping'];
-	const messages = [];
+	const messages: any[] = [];
 	let currentId = '';
-	let lastId = null;
+	let lastId: string | null = null;
 
 	for (const message_id in mapping) {
 		const message = mapping[message_id];
@@ -714,7 +714,7 @@ const convertOpenAIMessages = (convo) => {
 		}
 	}
 
-	const history: Record<PropertyKey, (typeof messages)[number]> = {};
+	const history: Record<PropertyKey, any> = {};
 	messages.forEach((obj) => (history[obj.id] = obj));
 
 	const chat = {
